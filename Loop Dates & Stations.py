@@ -14,6 +14,7 @@ stations = [
     'NMP', 'NUN', 'PRE', 'RUG', 'STA', 'SPT', 'SOT', 'TAM', 'WBQ', 'WFJ',
     'WGN', 'WVH'
 ]
+#combine stations with all possible options into pairs From/To
 stationsCombination = list(itertools.permutations(stations, 2))
 
 #arrange dates
@@ -45,5 +46,6 @@ for journey in stationsCombination:
                 print(stationFrom, "->", stationTo, "_", dateFrom, "->",
                       dateTo, "_", HourFrom, "->", HourTo)
 
+                #call API
                 readData(stationFrom, stationTo, dateFrom, dateTo, HourFrom,
                          HourTo)
